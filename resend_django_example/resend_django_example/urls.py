@@ -20,5 +20,6 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('send/', views.send_advanced_email, name='send'),
     path('admin/', admin.site.urls),
 ]

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Email</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+    <div style="background-color: #f4f4f4; padding: 20px; border-radius: 5px;">
+        <h1 style="color: #007bff;">Welcome, {{ user_name }}!</h1>
+        <p>Thank you for joining our service. We're excited to have you on board.</p>
+
+        <div style="background-color: white; padding: 15px; border-radius: 5px; margin: 20px 0;">
+            <h2 style="color: #333; font-size: 18px;">Getting Started</h2>
+            <ul>
+                <li>Complete your profile</li>
+                <li>Explore our features</li>
+                <li>Connect with other users</li>
+            </ul>
+        </div>
+
+        <p>Your account email: <strong>{{ user_email }}</strong></p>
+
+        <p style="margin-top: 30px;">
+            <a href="{{ dashboard_url }}" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">
+                Go to Dashboard
+            </a>
+        </p>
+
+        <p style="margin-top: 30px; font-size: 12px; color: #666;">
+            This email was sent using Django's template system with Anymail and Resend.
+        </p>
+    </div>
+</body>
+</html>
