@@ -50,19 +50,36 @@ cd resend_django_example
 python manage.py runserver
 ```
 
-5. Test the email endpoints:
+5. Test the email endpoints using curl:
 
-   - **Simple email**: Navigate to `http://127.0.0.1:8000/`
-   - **Template-based email**: Navigate to `http://127.0.0.1:8000/send/`
+   **Simple email** (default recipient):
+   ```sh
+   curl -X POST http://127.0.0.1:8000/send/
+   ```
+
+   **Simple email** (custom recipient):
+   ```sh
+   curl -X POST -d "email=your-email@example.com" http://127.0.0.1:8000/send/
+   ```
+
+   **Template-based email** (default recipient):
+   ```sh
+   curl -X POST http://127.0.0.1:8000/template_send/
+   ```
+
+   **Template-based email** (custom recipient):
+   ```sh
+   curl -X POST -d "email=your-email@example.com" http://127.0.0.1:8000/template_send/
+   ```
 
 ## What's Included
 
 This example demonstrates three patterns for sending emails in Django:
 
-### 1. Simple Email (`/` route)
+### 1. Simple Email (`/send/` route)
 Uses Django's `send_mail()` function - the simplest way to send emails in Django.
 
-### 2. Template-Based Email (`/send/` route)
+### 2. Template-Based Email (`/template_send/` route)
 Shows how to use Django templates for email content with:
 - Django's `render_to_string()` for template rendering
 - `EmailMessage` class for more control
