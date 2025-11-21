@@ -1,6 +1,6 @@
 # Resend with Django (using django-anymail)
 
-This example demonstrates how to integrate Resend with Django using **django-anymail**, which provides a Django email backend for Resend. This approach uses Django's standard email API (`send_mail()`, `EmailMessage`, etc.) rather than calling the Resend SDK directly.
+This example demonstrates how to integrate Resend with Django using **django-anymail**, which provides a Django email backend for Resend. This approach uses Django's standard email API (`send_mail()`, `EmailMessage`, etc.)
 
 ## Why django-anymail?
 
@@ -12,15 +12,13 @@ Using django-anymail with Django provides several benefits:
 - **Maintainable**: Follow Django best practices for sending emails
 - **Portable**: Easy to switch to another ESP by changing one setting
 
-This is the recommended approach for Django applications, as opposed to calling the Resend Python SDK directly from views.
-
 ## Prerequisites
 
 To get the most out of this guide, you'll need to:
 
-* [Create an API key](https://resend.com/api-keys)
-* [Verify your domain](https://resend.com/domains)
-* Install `virtualenv` by running `pip install virtualenv`
+- [Create an API key](https://resend.com/api-keys)
+- [Verify your domain](https://resend.com/domains)
+- Install `virtualenv` by running `pip install virtualenv`
 
 ## Instructions
 
@@ -53,21 +51,25 @@ python manage.py runserver
 5. Test the email endpoints using curl:
 
    **Simple email** (default recipient):
+
    ```sh
    curl -X POST http://127.0.0.1:8000/send/
    ```
 
    **Simple email** (custom recipient):
+
    ```sh
    curl -X POST -d "email=your-email@example.com" http://127.0.0.1:8000/send/
    ```
 
    **Template-based email** (default recipient):
+
    ```sh
    curl -X POST http://127.0.0.1:8000/template_send/
    ```
 
    **Template-based email** (custom recipient):
+
    ```sh
    curl -X POST -d "email=your-email@example.com" http://127.0.0.1:8000/template_send/
    ```
@@ -77,16 +79,21 @@ python manage.py runserver
 This example demonstrates three patterns for sending emails in Django:
 
 ### 1. Simple Email (`/send/` route)
+
 Uses Django's `send_mail()` function - the simplest way to send emails in Django.
 
 ### 2. Template-Based Email (`/template_send/` route)
+
 Shows how to use Django templates for email content with:
+
 - Django's `render_to_string()` for template rendering
 - `EmailMessage` class for more control
 - Resend-specific features like tags via `esp_extra`
 
 ### 3. Email Template (`templates/emails/welcome.html`)
+
 A reusable HTML email template that demonstrates:
+
 - Template variables (user_name, user_email, etc.)
 - Professional email styling
 - Django template system integration
