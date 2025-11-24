@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('send/', views.index, name='send'),
+    path('template_send/', views.send_advanced_email, name='template_send'),
     path('admin/', admin.site.urls),
 ]

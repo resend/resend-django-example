@@ -1,4 +1,2 @@
-import os
-import resend
-
-resend.api_key = os.environ["RESEND_API_KEY"]
+# Django app initialization
+# Email configuration is handled in settings.py using django-anymail
