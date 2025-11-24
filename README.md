@@ -2,16 +2,6 @@
 
 This example demonstrates how to integrate Resend with Django using **django-anymail**, which provides a Django email backend for Resend. This approach uses Django's standard email API (`send_mail()`, `EmailMessage`, etc.)
 
-## Why django-anymail?
-
-Using django-anymail with Django provides several benefits:
-
-- **Standard Django API**: Use Django's `send_mail()` and `EmailMessage` classes
-- **Django Integration**: Works with Django's email settings, templates, and configuration
-- **Easy Testing**: Switch backends easily for development/testing
-- **Maintainable**: Follow Django best practices for sending emails
-- **Portable**: Easy to switch to another ESP by changing one setting
-
 ## Prerequisites
 
 To get the most out of this guide, you'll need to:
